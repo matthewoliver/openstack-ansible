@@ -1,35 +1,35 @@
 ---
 cidr_networks:
 {% if bootstrap_host_scenario == "translations" %}
-  dbaas: 172.29.232.0/22
+  dbaas: fd00:0:0:5::0/112
 {% endif %}
 {% if bootstrap_host_scenario in ["octavia"] %}
-  lbaas: 172.29.252.0/22
+  lbaas: fd00:0:0:6::0/112
 {% endif %}
-  container: 172.29.236.0/22
-  tunnel: 172.29.240.0/22
-  storage: 172.29.244.0/22
+  container: fd00:0:0:1::0/112
+  tunnel: fd00:0:0:2::0/112
+  storage: fd00:0:0:3::0/112
 
 used_ips:
 {% if bootstrap_host_scenario == "translations" %}
-  - "172.29.232.1,172.29.232.50"
-  - "172.29.232.100"
+  - "fd00:0:0:5::1,fd00:0:0:5::50"
+  - "fd00:0:0:5::100"
 {% endif %}
 {% if bootstrap_host_scenario in ["translations", "octavia"] %}
-  - "172.29.252.1,172.29.252.50"
-  - "172.29.252.100"
+  - "fd00:0:0:6::1,fd00:0:0:6::50"
+  - "fd00:0:0:6::100"
 {% endif %}
-  - "172.29.236.1,172.29.236.50"
-  - "172.29.236.100"
-  - "172.29.240.1,172.29.240.50"
-  - "172.29.240.100"
-  - "172.29.244.1,172.29.244.50"
-  - "172.29.244.100"
-  - "172.29.248.1,172.29.248.50"
-  - "172.29.248.100"
+  - "fd00:0:0:1::1,fd00:0:0:1::50"
+  - "fd00:0:0:1::100"
+  - "fd00:0:0:2::1,fd00:0:0:2::50"
+  - "fd00:0:0:2::100"
+  - "fd00:0:0:3::1,fd00:0:0:3::50"
+  - "fd00:0:0:3::100"
+  - "fd00:0:0:4::1,fd00:0:0:4::50"
+  - "fd00:0:0:4::100"
 
 global_overrides:
-  internal_lb_vip_address: 172.29.236.100
+  internal_lb_vip_address: fd00:0:0:1::100
   # The external IP is quoted simply to ensure that the .aio file can be used as input
   # dynamic inventory testing.
   external_lb_vip_address: "{{ bootstrap_host_public_address | default(ansible_default_ipv4.address) }}"
@@ -117,7 +117,7 @@ global_overrides:
 # galera, memcache, rabbitmq, utility
 shared-infra_hosts:
   aio1:
-    ip: 172.29.236.100
+    ip: fd00:0:0:1::100
     container_vars:
       # Optional | container_tech for a target host, default is "lxc".
       container_tech: "{{ container_tech }}"
@@ -128,8 +128,8 @@ repo-infra_hosts:
     affinity:
       repo_container: 0
 {% endif %}
-    ip: 172.29.236.100
+    ip: fd00:0:0:1::100
 
 log_hosts:
   aio1:
-    ip: 172.29.236.100
+    ip: fd00:0:0:1::100

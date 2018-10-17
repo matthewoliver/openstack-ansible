@@ -65,7 +65,7 @@ the `LVMVolumeDriver`_ and many of the drivers for commercial storage devices.
 
 .. _cinder driver: http://docs.openstack.org/developer/cinder/drivers.html
 .. _LVMVolumeDriver: http://docs.openstack.org/developer/cinder/drivers.html#lvmvolumedriver
-.. _limitation with container iSCSI connectivity: https://bugs.launchpad.net/ubuntu/+source/lxc/+bug/1226855
+.. _limitation with container iSCSI connectivity: https://bugs.launchpad.net/ubuntu/+source/lxc/+bug/1126855
 .. _cinder-manage CLI tool: http://docs.openstack.org/developer/cinder/man/cinder-manage.html#cinder-volume
 .. _cinder volume active-active support spec: https://specs.openstack.org/openstack/cinder-specs/specs/mitaka/cinder-volume-active-active-support.html
 
