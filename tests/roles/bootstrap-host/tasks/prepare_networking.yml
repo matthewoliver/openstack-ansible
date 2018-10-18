@@ -136,21 +136,21 @@
         mtu: 9000
       - interface: "br-mgmt"
         address: "fd00:0:0:1::100"
-        netmask: "122"
+        netmask: "112"
 
       - interface: "bond0.120"
         bridge: "br-storage"
         mtu: 9000
       - interface: "br-storage"
         address: "fd00:0:0:3::100"
-        netmask: "122"
+        netmask: "112"
 
       - interface: "bond0.130"
         bridge: "br-dbaas"
         mtu: 9000
       - interface: "br-dbaas"
         address: "fd00:0:0:5::100"
-        netmask: "122"
+        netmask: "112"
       - interface: "br-dbaas-veth"
         bridge: "br-dbaas"
         mtu: 9000
@@ -160,7 +160,7 @@
         mtu: 9000
       - interface: "br-lbaas"
         address: "fd00:0:0:6::100"
-        netmask: "122"
+        netmask: "112"
       - interface: "br-lbaas-veth"
         bridge: "br-lbaas"
         mtu: 9000
@@ -170,7 +170,7 @@
         mtu: 9000
       - interface: "br-vxlan"
         address: "fd00:0:0:2::100"
-        netmask: "122"
+        netmask: "112"
 
       - interface: "br-vlan"
         config_overrides:
